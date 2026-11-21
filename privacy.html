@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f3eee4">
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var dark = stored === "dark" || (stored !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.setAttribute("data-theme", stored);
+        }
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", dark ? "#141210" : "#f3eee4");
+      } catch (e) {}
+    })();
+  </script>
+  <title>Privacy policy (draft) — Pantrysnapr</title>
+  <meta name="description" content="Draft privacy policy placeholder for Pantrysnapr. The app is designed to do its photo and recipe work on the device. This is not a finished policy.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <noscript><style>.theme-toggle{display:none}</style></noscript>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <aside class="draft-banner" aria-label="Draft notice">
+    <p><span class="draft-flag">Draft</span> This is a placeholder, not a finished privacy policy.</p>
+  </aside>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html">
+        <svg class="logo-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+          <rect class="mark-bg" width="32" height="32" rx="8"/>
+          <circle class="mark-ring" cx="16" cy="16" r="6.5" fill="none" stroke-width="1.6"/>
+          <circle class="mark-dot" cx="16" cy="16" r="2.4"/>
+        </svg>
+        <span>Pantrysnapr</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#privacy">Privacy</a>
+      </nav>
+      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Use dark theme">
+        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M14.6 2.8a8.4 8.4 0 1 0 6.6 13.5A7.2 7.2 0 0 1 14.6 2.8z"/>
+        </svg>
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="3.6" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.4 5.4l1.5 1.5M17.1 17.1l1.5 1.5M18.6 5.4l-1.5 1.5M6.9 17.1l-1.5 1.5"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <article class="wrap policy">
+      <p class="kicker">Placeholder</p>
+      <h1>Privacy policy (draft)</h1>
+      <p>This page is a placeholder for Pantrysnapr’s privacy policy. It is a draft, not a finished policy.</p>
+
+      <h2>About this draft</h2>
+      <p>Pantrysnapr is in development and has not been released. This draft has no effective date. A complete policy will replace it before the app is released.</p>
+
+      <h2>Photo and recipe work</h2>
+      <p>The app is designed to do its photo and recipe work on the device.</p>
+
+      <h2>What this draft does not do</h2>
+      <p>This page does not describe a final set of practices for how information is collected, used, or shared. Do not rely on it as a finished policy.</p>
+
+      <p class="back"><a href="index.html">Back to Pantrysnapr</a></p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-name">Pantrysnapr</p>
+      <p class="footer-note">Coming soon to iPhone.</p>
+      <nav aria-label="Footer">
+        <a href="privacy.html" aria-current="page">Privacy policy (draft)</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="theme.js"></script>
+</body>
+</html>
