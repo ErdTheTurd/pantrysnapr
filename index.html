@@ -3,211 +3,204 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f3eee4">
-  <script>
-    (function () {
-      try {
-        var stored = localStorage.getItem("theme");
-        var dark = stored === "dark" || (stored !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-        if (stored === "light" || stored === "dark") {
-          document.documentElement.setAttribute("data-theme", stored);
-        }
-        var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute("content", dark ? "#141210" : "#f3eee4");
-      } catch (e) {}
-    })();
-  </script>
-  <title>Pantrysnapr — Coming soon to iPhone</title>
-  <meta name="description" content="Pantrysnapr is an upcoming iPhone app. Snap a photo of your fridge or pantry, review the detected ingredients, and see recipes you can make, with allergens clearly flagged.">
+  <title>Pantrysnapr — a photo of the fridge, then recipes from what is in it</title>
+  <meta name="description" content="Pantrysnapr is an upcoming iPhone app. Photograph the fridge or pantry, edit the ingredient list, and see recipes ranked by what you already have, then what is missing one or two items. Allergens are badged. Coming to iPhone.">
+  <meta name="theme-color" content="#f4f0e8">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-  <noscript><style>.theme-toggle{display:none}</style></noscript>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="logo" href="index.html">
-        <svg class="logo-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
-          <rect class="mark-bg" width="32" height="32" rx="8"/>
-          <circle class="mark-ring" cx="16" cy="16" r="6.5" fill="none" stroke-width="1.6"/>
-          <circle class="mark-dot" cx="16" cy="16" r="2.4"/>
-        </svg>
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html" aria-current="page">
+        <img class="brand-mark" src="favicon.svg" width="28" height="28" alt="">
         <span>Pantrysnapr</span>
       </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#how">How it works</a>
-        <a href="#features">Features</a>
-        <a href="#privacy">Privacy</a>
-      </nav>
-      <button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" aria-label="Use dark theme">
-        <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="currentColor" d="M14.6 2.8a8.4 8.4 0 1 0 6.6 13.5A7.2 7.2 0 0 1 14.6 2.8z"/>
-        </svg>
-        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="3.6" fill="currentColor"/>
-          <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-            <path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.4 5.4l1.5 1.5M17.1 17.1l1.5 1.5M18.6 5.4l-1.5 1.5M6.9 17.1l-1.5 1.5"/>
-          </g>
-        </svg>
-      </button>
-    </div>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </nav>
   </header>
-  <main id="main" tabindex="-1">
+
+  <main id="main">
     <section class="hero" aria-labelledby="site-title">
-      <div class="wrap hero-grid">
+      <div class="wrap hero-inner">
         <div class="hero-copy">
-          <p class="kicker">In development</p>
-          <h1 class="wordmark" id="site-title">Pantrysnapr</h1>
-          <span class="rule" aria-hidden="true"></span>
-          <p class="pitch">Snap a photo of your fridge or pantry and get recipes from what you already have.</p>
-          <p class="soon"><span class="soon-dot" aria-hidden="true"></span>Coming soon to iPhone</p>
-          <p class="support">Review the detected ingredients, edit the list, and see common allergens flagged.</p>
+          <p class="wordmark">Pantrysnapr</p>
+          <h1 id="site-title">Photograph the fridge. See what you can cook from it.</h1>
+          <p class="lede">Correct the list the photo produces. Recipes are ranked by what you already have, then by what is missing one item, then two.</p>
+          <p class="device-note">Coming to iPhone.</p>
+          <p class="device-note">For the iPhone Duo and a regular iPhone.</p>
         </div>
+
         <figure class="hero-visual">
-          <div class="device" aria-hidden="true">
-            <div class="device-screen">
-              <div class="earpiece"></div>
-              <p class="screen-kicker">Example</p>
-              <div class="photo">
-                <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">
-                  <defs>
-                    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0" stop-color="#f6e7d2"/>
-                      <stop offset="1" stop-color="#e4ceb0"/>
-                    </linearGradient>
-                  </defs>
-                  <rect width="320" height="180" fill="url(#wall)"/>
-                  <g>
-                    <path d="M40 68 l20-18 20 18" fill="#fbf7f0"/>
-                    <rect x="36" y="66" width="48" height="66" rx="5" fill="#fbf7f0"/>
-                    <rect x="36" y="80" width="48" height="14" fill="#1b3a30"/>
-                    <rect x="48" y="102" width="24" height="3" rx="1.5" fill="#e4d8c6"/>
-                  </g>
-                  <ellipse cx="118" cy="108" rx="15" ry="23" fill="#fffaf3" transform="rotate(-14 118 108)"/>
-                  <ellipse cx="146" cy="112" rx="14" ry="21" fill="#f3ecdf" transform="rotate(10 146 112)"/>
-                  <g>
-                    <path d="M176 122c22-48 62-44 66-6-22 2-46 4-66 6z" fill="#1f4f3b"/>
-                    <path d="M196 124c16-40 58-42 70-2-24 4-48 4-70 2z" fill="#2c6a4c"/>
-                    <path d="M220 126c18-34 62-30 64 2-22 2-46 0-64-2z" fill="#3d8160"/>
-                    <path d="M186 120c28-22 52-16 62-4" fill="none" stroke="#163828" stroke-width="1" opacity="0.45"/>
-                    <path d="M208 122c26-16 48-12 58-2" fill="none" stroke="#163828" stroke-width="1" opacity="0.35"/>
-                  </g>
-                  <rect x="22" y="130" width="276" height="7" rx="3" fill="#c9b295"/>
-                  <rect x="26" y="137" width="268" height="10" fill="#ddc9ad"/>
-                  <g fill="none" stroke="#1c1814" stroke-opacity="0.42" stroke-width="2">
-                    <path d="M16 24 h18 M16 24 v18"/>
-                    <path d="M304 24 h-18 M304 24 v18"/>
-                    <path d="M16 156 h18 M16 156 v-18"/>
-                    <path d="M304 156 h-18 M304 156 v-18"/>
-                  </g>
-                </svg>
-              </div>
-              <div class="screen-row">
-                <p class="screen-label">Ingredients</p>
-                <p class="screen-edit">Edit</p>
-              </div>
-              <ul class="chips">
-                <li>Eggs</li>
-                <li>Milk</li>
-                <li>Spinach</li>
-              </ul>
-              <p class="screen-label">Recipes</p>
-              <div class="mini-card">
-                <p class="mini-title">From your list</p>
-                <p class="mini-badges"><span class="mini-badge">Eggs</span><span class="mini-badge">Milk</span></p>
+          <div class="phone">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <p class="preview-tag">Design preview</p>
+                <p class="screen-title">Fridge</p>
+                <p class="screen-sub">Seven items from one photo. Change anything that is wrong.</p>
+                <ul class="ing-list">
+                  <li><span>Eggs</span><span class="row-action">Remove</span></li>
+                  <li><span>Whole milk</span><span class="row-action">Remove</span></li>
+                  <li><span>Baby spinach</span><span class="row-action">Remove</span></li>
+                  <li><span>Cheddar</span><span class="row-action">Remove</span></li>
+                  <li><span>Unsalted butter</span><span class="row-action">Remove</span></li>
+                  <li><span>Plain yogurt</span><span class="row-action">Remove</span></li>
+                  <li><span>Lemon</span><span class="row-action">Remove</span></li>
+                </ul>
+                <p class="add-row"><span aria-hidden="true">+</span> Add an item</p>
+                <div class="home-bar" aria-hidden="true"></div>
               </div>
             </div>
           </div>
-          <figcaption>Illustration only. Not a result from the app.<span class="visually-hidden"> A fridge photo, an editable ingredient list, and a recipe with allergen badges.</span></figcaption>
+          <figcaption class="caption">Design preview, not a screenshot.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="section band" id="how" aria-labelledby="how-title">
+    <section class="screens" id="screens" aria-labelledby="screens-title">
       <div class="wrap">
-        <div class="section-head">
-          <h2 id="how-title">How it works</h2>
-          <p class="lede">A photo, a list you can correct, then recipes.</p>
+        <div class="screens-head">
+          <h2 id="screens-title">Then the recipes</h2>
+          <p>Two more drawings of screens. The app is not built yet, so none of these are screenshots.</p>
         </div>
-        <ol class="steps">
-          <li>
-            <div class="step">
-              <span class="step-index" aria-hidden="true">01</span>
-              <h3>Snap a photo</h3>
-              <p>Take a picture of your fridge or pantry.</p>
+        <div class="screen-grid">
+          <figure class="phone">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <p class="preview-tag">Design preview</p>
+                <p class="screen-title">Recipes</p>
+                <p class="screen-sub">Ranked from the fridge list.</p>
+
+                <h3 class="group">You have everything</h3>
+                <ul class="recipe-list">
+                  <li>
+                    <p class="recipe-name">Spinach and cheddar omelette</p>
+                    <p class="recipe-meta">Eggs, spinach, cheddar, butter</p>
+                  </li>
+                  <li>
+                    <p class="recipe-name">Lemon yogurt</p>
+                    <p class="recipe-meta">Yogurt, lemon</p>
+                  </li>
+                </ul>
+
+                <h3 class="group">Missing one</h3>
+                <ul class="recipe-list">
+                  <li>
+                    <p class="recipe-name">Eggs on toast</p>
+                    <p class="recipe-meta missing">Missing bread</p>
+                  </li>
+                  <li>
+                    <p class="recipe-name">Spinach quesadilla</p>
+                    <p class="recipe-meta missing">Missing tortillas</p>
+                  </li>
+                </ul>
+
+                <h3 class="group">Missing two</h3>
+                <ul class="recipe-list">
+                  <li>
+                    <p class="recipe-name">Lemon pasta with spinach</p>
+                    <p class="recipe-meta missing">Missing pasta and garlic</p>
+                  </li>
+                </ul>
+                <div class="home-bar" aria-hidden="true"></div>
+              </div>
             </div>
-          </li>
-          <li>
-            <div class="step">
-              <span class="step-index" aria-hidden="true">02</span>
-              <h3>Check and edit the ingredient list</h3>
-              <p>Review what was detected and change anything that is not right.</p>
+            <figcaption class="caption">Design preview, not a screenshot.</figcaption>
+          </figure>
+
+          <figure class="phone">
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <p class="preview-tag">Design preview</p>
+                <p class="screen-title">Spinach and cheddar omelette</p>
+                <p class="screen-sub">You have every ingredient on the list.</p>
+
+                <h3 class="detail-label">In the recipe</h3>
+                <ul class="detail-list">
+                  <li><span>Eggs</span><span class="have">On the list</span></li>
+                  <li><span>Baby spinach</span><span class="have">On the list</span></li>
+                  <li><span>Cheddar</span><span class="have">On the list</span></li>
+                  <li><span>Unsalted butter</span><span class="have">On the list</span></li>
+                </ul>
+
+                <h3 class="detail-label">Method</h3>
+                <ol class="method">
+                  <li>Beat the eggs.</li>
+                  <li>Wilt the spinach in the butter.</li>
+                  <li>Cook the eggs and fold in the cheddar.</li>
+                </ol>
+
+                <h3 class="detail-label">Allergens</h3>
+                <ul class="badges">
+                  <li>Eggs</li>
+                  <li>Milk</li>
+                </ul>
+                <p class="label-note">Always check the label. A badge is not the package.</p>
+                <div class="home-bar" aria-hidden="true"></div>
+              </div>
             </div>
-          </li>
-          <li>
-            <div class="step">
-              <span class="step-index" aria-hidden="true">03</span>
-              <h3>Get recipes</h3>
-              <p>See recipes you can make from the ingredients you have, with allergens clearly flagged.</p>
-            </div>
-          </li>
-        </ol>
+            <figcaption class="caption">Design preview, not a screenshot.</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="features" aria-labelledby="features-title">
+    <section class="features" id="does" aria-labelledby="does-title">
       <div class="wrap">
-        <div class="section-head">
-          <h2 id="features-title">Features</h2>
+        <div class="features-head">
+          <h2 id="does-title">What it does</h2>
+          <p>A short list of what is in the outline. Nothing more.</p>
         </div>
-        <div class="cards">
-          <article class="card">
-            <h3>Recipes from what you already have</h3>
-            <p class="card-lead">Pantrysnapr starts from the ingredients on hand, so the recipes match what is already in your kitchen.</p>
-          </article>
-          <article class="card">
-            <h3>iPhone</h3>
-            <p class="card-lead">Works on the iPhone Duo and regular iPhones.</p>
-          </article>
-          <article class="card card-wide">
-            <h3>Clear allergen badges</h3>
-            <p>Common allergens are flagged with a badge:</p>
-            <ul class="badges">
-              <li>Milk</li>
-              <li>Eggs</li>
-              <li>Fish</li>
-              <li>Shellfish</li>
-              <li>Tree nuts</li>
-              <li>Peanuts</li>
-              <li>Wheat</li>
-              <li>Soy</li>
-              <li>Sesame</li>
-            </ul>
-            <p class="reminder"><strong>Always check labels.</strong> Badges make these allergens easier to notice. They are not a substitute for reading labels on foods and ingredients.</p>
-          </article>
-        </div>
+        <ul class="feature-list">
+          <li>
+            <h3>The photo</h3>
+            <p>Take a picture of the fridge or the pantry.</p>
+          </li>
+          <li>
+            <h3>The ingredient list</h3>
+            <p>Review what the photo found. Add what it missed. Remove what does not belong.</p>
+          </li>
+          <li>
+            <h3>The order</h3>
+            <p>Recipes you can make from the list come first. Then recipes missing one item. Then recipes missing two.</p>
+          </li>
+          <li>
+            <h3>Allergen badges</h3>
+            <p>A recipe can show badges for milk, eggs, fish, shellfish, tree nuts, peanuts, wheat, soy, and sesame. Always check the label on the food itself.</p>
+          </li>
+          <li>
+            <h3>On the device</h3>
+            <p>Photo and recipe work is designed to happen on the device.</p>
+          </li>
+          <li>
+            <h3>iPhone Duo and iPhone</h3>
+            <p>For the iPhone Duo and for a regular iPhone.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section class="section band" id="privacy" aria-labelledby="privacy-title">
+    <section class="privacy-band" id="privacy" aria-labelledby="privacy-title">
       <div class="wrap privacy-block">
         <h2 id="privacy-title">Privacy</h2>
-        <p>Pantrysnapr is designed to do its photo and recipe work on the device.</p>
+        <p>The app is designed to do its photo and recipe work on the device.</p>
         <p><a href="privacy.html">Privacy policy (draft)</a></p>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p class="footer-name">Pantrysnapr</p>
-      <p class="footer-note">Coming soon to iPhone.</p>
-      <nav aria-label="Footer">
+      <p>Pantrysnapr. Coming to iPhone.</p>
+      <div class="footer-links">
         <a href="privacy.html">Privacy policy (draft)</a>
-      </nav>
+      </div>
     </div>
   </footer>
-  <script src="theme.js"></script>
 </body>
 </html>
